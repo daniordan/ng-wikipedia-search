@@ -1,0 +1,8 @@
+<div class="box">
+    <!-- Wrapping the input in a form element, that is going to automatically trigger what is called a submit event on the wrapping form, this is how the browser works be default, not a Angular feature -->
+    <form (submit)="onFormSubmit($event)">
+        <input placeholder="Enter Search Term" class="input" (input)="onInput($event)" />
+        <!-- another alternative -->
+        <!-- <input (input)="term = (event.target as HTMLInputElement).value" /> -->
+    </form>
+</div>

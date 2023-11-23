@@ -1,0 +1,25 @@
+<table class="table is-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Word Count</th>
+            <th>Snippet</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let page of pages">
+            <td>
+                <!--  to link to the wikipedia page using the page ID from the response object json requested from the Wikipedia API -->
+                <!-- target="_blank" means that the link will open in a new tab -->
+                <a target="_blank" [href]="'https://en.wikipedia.org?curid=' + page.pageid">
+                    {{ page.title }}
+                </a>
+            </td>
+            <td>{{ page.wordcount }}</td>
+            <!-- this means that the snippet will be rendered as HTML -->
+            <!-- we won,t be exposed to XSS attacks because Angular will check this before rendering -->
+            <!-- will create the span element but Angular will also search for JavaScript malicious staff and it will remove it so it's safe to do this -->
+            <td [innerHTML]="page.snippet"></td>
+        </tr>
+    </tbody>
+</table>
