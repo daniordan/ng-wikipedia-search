@@ -1,5 +1,7 @@
 # Wikipedia Search Angular App
 
+Wikipedia Searching Tool for Wikipedia platform with search feature implemented to be able to search Wikipedia base of articles on any topic, by fetching data from Wikipedia API.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9.
 
 ## Prerequisites
